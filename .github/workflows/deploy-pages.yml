@@ -1,11 +1,11 @@
 # Build Vite app and deploy to GitHub Pages.
 # Site URL: https://<your-username>.github.io/<repo-name>/
-name: Deploy to GitHub Pages
+# (Use this workflow only — remove any Jekyll "Pages" workflow or it will overwrite dist with an empty site.)
+name: Vite to GitHub Pages
 
 on:
   push:
     branches: [main, master]
-  # Lets you re-deploy from the Actions tab without an empty commit
   workflow_dispatch:
 
 permissions:
@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: vite-pages
   cancel-in-progress: true
 
 jobs:
